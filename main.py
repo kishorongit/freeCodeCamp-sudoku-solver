@@ -52,3 +52,27 @@ class Board:
                     return True
                 self.board[row][col] = 0
         return False
+
+
+def solve_sudoku(board):
+    gameboard = Board(board)
+    print(f'Puzzle to solve:\n{gameboard}')
+    if gameboard.solver():
+        print(f'Solved puzzle:\n{gameboard}')
+    else:
+        print('The provided puzzle is unsolvable.')
+    return gameboard
+
+
+puzzle = [
+    [0, 0, 2, 0, 0, 8, 0, 0, 0],
+    [0, 0, 0, 0, 0, 3, 7, 6, 2],
+    [4, 3, 0, 0, 0, 0, 8, 0, 0],
+    [0, 5, 0, 0, 3, 0, 0, 9, 0],
+    [0, 4, 0, 0, 0, 0, 0, 2, 6],
+    [0, 0, 0, 4, 6, 7, 0, 0, 0],
+    [0, 8, 6, 7, 0, 4, 0, 0, 0],
+    [0, 0, 0, 5, 1, 9, 0, 0, 8],
+    [1, 7, 0, 0, 0, 6, 0, 0, 5]
+]
+solve_sudoku(puzzle)
